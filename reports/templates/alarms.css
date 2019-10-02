@@ -39,17 +39,14 @@ h2, h3 {
     -moz-transform:scale(-1,1);
     -o-transform:scale(-1,1);
     }
-.alWARNING, .agWARNING, .laWARNING {
+.alWarning, .agWarning, .laWarning {
     color: #FFBF00;
 }
-.alERROR_DAY, .agERROR_DAY, .laERROR_DAY {
+.alAlarm, .agAlarm, .laAlarm {
     color: #ff00ff;
 }
-.alERROR_NOW, .agERROR_NOW , .laERROR_NOW {
+.alFailure, .agFailure, .laFailure{
     color: #0000ff;
-}
-.alSTOP_ALL, .agSTOP_ALL , .laSTOP_ALL {
-    color: #ff0000;
 }
 .alACK, .alGACK, .agACK, .agGACK , .laACK, .laGACK {
     color: #AAAAAA;

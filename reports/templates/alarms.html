@@ -11,14 +11,14 @@
     <div id="body">
         <h2>Alarms Report {{plant}}</h2>
         <div class="column-left">
-            <a id="link-prev" href="{{ link_prev_doc }}"><img src="images/go-next.ico" style="width: 50%; height: 50%;" class="mirror"/></a>
+            <a id="link-prev" href="{{ link_prev_doc }}"><img src="images/go-next.ico" style="width: 20%; height: 20%;" class="mirror"/></a>
         </div>
         <div class="column-center" style="padding: auto;">
         <h3>{{ date_str }}</h3>
         </div>
         <div class="column-right">
             <div align="right">
-                <a id="link-next" href="{{ link_next_doc }}"><img src="images/go-next.ico" style="width: 50%; height: 50%;" size="50%"/></a>
+                <a id="link-next" href="{{ link_next_doc }}"><img src="images/go-next.ico" style="width: 20%; height: 20%;"/></a>
             </div>
         </div>
 
@@ -28,10 +28,9 @@
             <div id="alarms_grouped">
                 <table>
                     <tr><th>Priority</th><th>Count</th></tr>
-                    <tr><td class="agWARNING">WARNING</td><td>{{ count['warning'] }}</td></tr>
-                    <tr><td class="agERROR_DAY">ERROR_DAY</td><td>{{ count['error_day'] }}</td></tr>
-                    <tr><td class="agERROR_NOW">ERROR_NOW</td><td>{{ count['error_now'] }}</td></tr>
-                    <tr><td class="agSTOP_ALL">STOP_ALL</td><td>{{ count['stop_all'] }}</td></tr>
+                    <tr><td class="agWarning">Warning</td><td>{{ count['warning'] }}</td></tr>
+                    <tr><td class="agAlarm">Alarm</td><td>{{ count['alarm'] }}</td></tr>
+                    <tr><td class="agFailure">Failure</td><td>{{ count['failure'] }}</td></tr>
                     <tr><td>SUM</td><td>{{ count['sum'] }}</td></tr>
                 </table>
             </div>
@@ -41,21 +40,17 @@
             <div id="alarm_filter">
                 <form id="form_alarm_filter" action="">
                     <fieldset>
-                        <label class="laWARNING" for="check1">
-                          <input type="checkbox" name="alarm_priority" value="warning" id="check_warning" checked onClick="alarm_filter()">
-                          WARNING
+                        <label class="laWarning " for="check1">
+                          <input type="checkbox" name="alarm_priority" value="warning" id="check_warning" onClick="alarm_filter()">
+                          Warning 
                         </label>
-                        <label class="laERROR_DAY" for="check2">
-                           <input type="checkbox" name="alarm_priority" value="error_day" id="check_error_day" checked onClick="alarm_filter()">
-                          ERROR_DAY
+                        <label class="laAlarm" for="check2">
+                           <input type="checkbox" name="alarm_priority" value="alarm" id="check_alarm" onClick="alarm_filter()">
+                          Alarm
                         </label>
-                        <label class="laERROR_NOW" for="check3">
-                          <input type="checkbox" name="alarm_priority" value="error_now" id="check_error_now" checked onClick="alarm_filter()">
-                          ERROR_NOW
-                        </label>
-                        <label class="laSTOP_ALL" for="check4">
-                          <input type="checkbox" name="alarm_priority" value="stop_all" id="check_stop_all" checked onClick="alarm_filter()">
-                          STOP_ALL
+                        <label class="laFailure" for="check3">
+                          <input type="checkbox" name="alarm_priority" value="failure" id="check_failure" checked onClick="alarm_filter()">
+                          Failure
                         </label>
                         <br/>
                         <label class="laCOME" for="check5">

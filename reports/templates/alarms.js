@@ -16,16 +16,13 @@ function alarm_filter() {
         $(".alGACK").addClass("hidden-row");
     }
     if (document.getElementById('check_warning').checked == 0) {
-        $(".alWARNING").addClass("hidden-row");
+        $(".alWarning").addClass("hidden-row");
     }
-    if (document.getElementById('check_error_day').checked == 0) {
-        $(".alERROR_DAY").addClass("hidden-row");
+    if (document.getElementById('check_alarm').checked == 0) {
+        $(".alAlarm").addClass("hidden-row");
     }
-    if (document.getElementById('check_error_now').checked == 0) {
-        $(".alERROR_NOW").addClass("hidden-row");
-    }
-    if (document.getElementById('check_stop_all').checked == 0) {
-        $(".alSTOP_ALL").addClass("hidden-row");
+    if (document.getElementById('check_failure').checked == 0) {
+        $(".alFailure").addClass("hidden-row");
     }
 }
 
