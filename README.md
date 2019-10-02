@@ -2,7 +2,7 @@ pywincc
 =======================
 
 This python module provides access to the Microsoft SQL Server 2005 database underlying Siemens WinCC.
-Tested with WinCC 7.0 and 7.3 on Windows 7 32 bit and 64 bit.
+Tested with WinCC 7.0 and 7.3 and 7.4 on Windows 7 32 bit and 64 bit and Windows 10 64 bit.
 
 ## Functions
 
