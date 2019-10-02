@@ -60,7 +60,7 @@ def generate_alarms_report(alarms, begin_time, end_time,
     html_out = template.render(template_vars)
 
     filename = "./reports/_out/alarms_{0}_{1}.html".format(host_description.replace(' ', '_'), date_str_file)
-    logging.debug("Opering file %s for printing the report.", filename)
+    logging.debug("Opening file %s for printing the report.", filename)
     with open(filename, "wb") as fh:
         fh.write(html_out.encode('utf-8'))
 
