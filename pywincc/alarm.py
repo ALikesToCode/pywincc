@@ -67,20 +67,16 @@ class AlarmRecord():
                     if (a.priority == priority and a.state == state)])
 
     def count_come_warning(self):
-        """Return number of alarms of state 'COME' and priority 'WARNING'."""
-        return self.count_by_state_and_priority(1, u'WARNING')
+        """Return number of alarms of state 'COME' and priority 'Warning'."""
+        return self.count_by_state_and_priority(1, u'Warning')
 
-    def count_come_error_day(self):
-        """Return number of alarms of state 'COME' and priority 'ERROR_DAY'."""
-        return self.count_by_state_and_priority(1, u'ERROR_DAY')
+    def count_come_alarm(self):
+        """Return number of alarms of state 'COME' and priority 'Alarm'."""
+        return self.count_by_state_and_priority(1, u'Alarm')
 
-    def count_come_error_now(self):
-        """Return number of alarms of state 'COME' and priority 'ERROR_NOW'."""
-        return self.count_by_state_and_priority(1, u'ERROR_NOW')
-
-    def count_come_stop_all(self):
-        """Return number of alarms of state 'COME' and priority 'STOP_ALL'."""
-        return self.count_by_state_and_priority(1, u'STOP_ALL')
+    def count_come_failure(self):
+        """Return number of alarms of state 'COME' and priority 'Failure'."""
+        return self.count_by_state_and_priority(1, u'Failure')
 
     def to_html(self):
         """Return a string that holds a HTML representation of alarms in record."""
@@ -100,10 +96,9 @@ class AlarmRecord():
         """Return a string that holds a HTML representation of grouped alarm priorities in record."""
         html = u"<table>\n"
         html += u"<tr><th>Priority</th><th>Count</th></tr>"
-        html += u"<tr><td>WARNING</td><td>{count}</td></tr>".format(count=self.count_come_warning())
-        html += u"<tr><td>ERROR_DAY</td><td>{count}</td></tr>".format(count=self.count_come_error_day())
-        html += u"<tr><td>ERROR_NOW</td><td>{count}</td></tr>".format(count=self.count_come_error_now())
-        html += u"<tr><td>STOP_ALL</td><td>{count}</td></tr>".format(count=self.count_come_stop_all())
+        html += u"<tr><td>Warning</td><td>{count}</td></tr>".format(count=self.count_come_warning())
+        html += u"<tr><td>Alarm</td><td>{count}</td></tr>".format(count=self.count_come_alarm())
+        html += u"<tr><td>Failure</td><td>{count}</td></tr>".format(count=self.count_come_failure())
         html += u"<tr><td>SUM</td><td>{count}</td></tr>".format(count=self.count_come())
         html += u"</table>\n"
         return html
@@ -111,9 +106,8 @@ class AlarmRecord():
     def get_count_grouped(self):
         """Return a dict of alarm priorities and counts."""
         return {'warning': self.count_come_warning(),
-                'error_day': self.count_come_error_day(),
-                'error_now': self.count_come_error_now(),
-                'stop_all': self.count_come_stop_all(),
+                'alarm': self.count_come_alarm(),
+                'failure': self.count_come_failure(),
                 'sum': self.count_come()}
 
     def filter_by_priority(self, priority):
